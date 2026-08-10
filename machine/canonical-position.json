@@ -1,0 +1,61 @@
+{
+  "schema": "glaciereq.repo-canonical-position.v1",
+  "repository": "GlacierEQ/palantir-action-lineage-graph",
+  "position_state": "RESOLVED",
+  "role": "CANONICAL_SPECIALIST",
+  "company_target": "Palantir",
+  "canonical_identity": "action-lineage-graph",
+  "owns": "causal_action_provenance",
+  "unique_value": [
+    "fail-closed causal DAG for operational actions",
+    "non-root actions require causal parents",
+    "side effects require explicit attestation metadata",
+    "committed payloads are snapshotted to prevent caller-side mutation of history",
+    "lineage fingerprints bind reachable topology and committed node content",
+    "depth, parent-count, duplicate, missing-parent and cycle guards bound graph growth"
+  ],
+  "does_not_own": [
+    "actor/object authorization policy",
+    "ontology mutation/writeback semantics",
+    "external signature authentication",
+    "durable external persistence"
+  ],
+  "capability_contribution": {
+    "family": "causal_action_provenance",
+    "extractable_mechanisms": [
+      "causal_parent_guard",
+      "side_effect_attestation_requirement",
+      "content_bound_lineage_fingerprint",
+      "immutable_commit_snapshot",
+      "bounded_dag_depth_and_fan_in"
+    ],
+    "ownership": "This repository is the canonical Palantir-lens specialist for causal action provenance; sibling authority and writeback repositories remain separate control planes."
+  },
+  "relationships": [
+    {
+      "repository": "GlacierEQ/palantir-object-authority-matrix",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "authorization decision is separate from causal provenance"
+    },
+    {
+      "repository": "GlacierEQ/palantir-ontology-writeback-ledger",
+      "relation": "COMPOSES_WITH",
+      "integration_exercised": false,
+      "boundary": "writeback receipt may become a future lineage node only after executable integration proof"
+    }
+  ],
+  "next_evolution": "Bind authenticated authority/writeback receipts as typed lineage evidence, persist/reload graph state, and prove restart-safe content-addressed lineage without merging sibling responsibilities.",
+  "evidence_refs": [
+    "src/lineage.py",
+    "tests/test_lineage.py",
+    "tests/test_adversarial.py",
+    "machine/target-contract.json",
+    "machine/proof_receipt.json"
+  ],
+  "nonclaims": [
+    "no Palantir affiliation",
+    "not a production Palantir lineage service",
+    "attestation metadata is required but not externally authenticated"
+  ]
+}
