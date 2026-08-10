@@ -5,11 +5,11 @@
     "family": "causal_action_provenance"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
     "deployed": false,
-    "canonical_position_pending_exact_head_proof": true
+    "canonical_position_pending_exact_head_proof": false
   },
   "target": {
     "purpose": "Preserve a fail-closed causal record for consequential operational actions without conflating provenance with authorization or writeback.",
@@ -35,14 +35,18 @@
     "status": "RESOLVED",
     "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
     "donors": [],
-    "basis": "The repository already owns the implemented causal-provenance mechanism; sibling authority and writeback systems remain separate composition targets."
+    "basis": "The repository owns the causal-provenance mechanism; authority and writeback remain separate sibling control planes."
   },
   "promotion": {
     "required_tests": ["unit", "adversarial", "canonical-position"],
     "require_exact_source_sha": true,
     "require_receipt": true,
     "require_nonclaims": true,
-    "next_gate": "CANONICAL_POSITION_RESOLVED"
+    "next_gate": "EVOLUTION_CURSOR_DEFINED"
+  },
+  "evolution": {
+    "cursor": "next:bind_authenticated_authority_and_writeback_receipts_then_restart_safe_persistence",
+    "composition_gate": "Do not claim sibling integration until typed receipt binding and end-to-end replay/readback are exercised."
   },
   "nonclaims": [
     "no Palantir affiliation",
