@@ -1,0 +1,29 @@
+{
+  "schema": "glaciereq.canonical-position-proof.v1",
+  "repository": "GlacierEQ/palantir-action-lineage-graph",
+  "gate": "CANONICAL_POSITION_RESOLVED",
+  "result": "PASS",
+  "tested_source_sha": "3f1beb40f92007a3b42bcddb55ddb45a958ecbe5",
+  "workflow": {
+    "provider": "github-actions",
+    "run_id": 31388048248,
+    "conclusion": "success"
+  },
+  "observed_scope": [
+    "causal parent/root invariants",
+    "side-effect attestation metadata requirement",
+    "duplicate and depth/fan-in refusal paths",
+    "immutable committed payload snapshots",
+    "content-bound lineage fingerprints",
+    "canonical role and non-integration truth contracts"
+  ],
+  "canonical_role": "CANONICAL_SPECIALIST:causal_action_provenance",
+  "limitations": [
+    "in-memory reference mechanism",
+    "attestation metadata is not externally authenticated",
+    "no external persistence proof",
+    "no exercised integration with authority or writeback siblings",
+    "no Palantir affiliation or adoption claim"
+  ],
+  "receipt_commit_policy": "This receipt is metadata added after the tested source. Final PR-head CI must pass after receipt inclusion before merge."
+}
