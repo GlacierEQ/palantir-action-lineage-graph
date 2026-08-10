@@ -34,11 +34,12 @@ class CanonicalPositionContractTests(unittest.TestCase):
         self.assertIn("content_bound_lineage_fingerprint", capabilities)
         self.assertIn("immutable_commit_snapshot", capabilities)
 
-    def test_target_waits_for_exact_head_proof(self):
-        self.assertEqual(TARGET["current"]["state"], "PROMOTED")
-        self.assertTrue(TARGET["current"]["canonical_position_pending_exact_head_proof"])
+    def test_target_reflects_earned_canonical_position(self):
+        self.assertEqual(TARGET["current"]["state"], "EVOLVING")
+        self.assertFalse(TARGET["current"]["canonical_position_pending_exact_head_proof"])
         self.assertTrue(TARGET["promotion"]["require_exact_source_sha"])
-        self.assertEqual(TARGET["promotion"]["next_gate"], "CANONICAL_POSITION_RESOLVED")
+        self.assertEqual(TARGET["promotion"]["next_gate"], "EVOLUTION_CURSOR_DEFINED")
+        self.assertTrue(TARGET["evolution"]["cursor"].startswith("next:"))
 
     def test_truth_boundary_excludes_authority_and_execution(self):
         boundary = CAPABILITIES["truth_boundary"]
