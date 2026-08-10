@@ -2,21 +2,52 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/palantir-action-lineage-graph",
-    "family": "elite-estate"
+    "family": "causal_action_provenance"
   },
   "current": {
     "state": "PROMOTED",
     "implemented": true,
     "tested": true,
-    "deployed": false
+    "deployed": false,
+    "canonical_position_pending_exact_head_proof": true
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "target": {
+    "purpose": "Preserve a fail-closed causal record for consequential operational actions without conflating provenance with authorization or writeback.",
+    "central_bottleneck": "Operational actions become difficult to audit or safely compose when causal ancestry, side-effect evidence, and exact committed content are not bound into one verifiable lineage structure.",
+    "success": [
+      "Every non-root action has at least one existing causal parent.",
+      "Side-effect nodes carry explicit attestation metadata.",
+      "Committed payload history cannot be changed through caller-owned mutable objects.",
+      "Lineage fingerprints bind exact reachable node content and topology.",
+      "Depth and parent fan-in remain explicitly bounded."
+    ]
+  },
+  "invariants": [
+    "roots have no parents",
+    "non-root actions require existing parents",
+    "side effects require attestation metadata",
+    "duplicate identities and duplicate parents refuse",
+    "committed payloads are snapshotted",
+    "lineage fingerprints bind content and topology",
+    "graph depth and fan-in are bounded"
   ],
   "donor_plan": {
-    "mode": "none",
-    "donors": []
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
+    "donors": [],
+    "basis": "The repository already owns the implemented causal-provenance mechanism; sibling authority and writeback systems remain separate composition targets."
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "promotion": {
+    "required_tests": ["unit", "adversarial", "canonical-position"],
+    "require_exact_source_sha": true,
+    "require_receipt": true,
+    "require_nonclaims": true,
+    "next_gate": "CANONICAL_POSITION_RESOLVED"
+  },
+  "nonclaims": [
+    "no Palantir affiliation",
+    "not a production Palantir lineage service",
+    "attestation metadata is not externally authenticated",
+    "no exercised integration with the authority or writeback sibling repositories"
+  ]
 }
