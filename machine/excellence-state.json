@@ -1,76 +1,22 @@
 {
   "schema": "glaciereq.repo-excellence-state.v1",
   "repository": "GlacierEQ/palantir-action-lineage-graph",
-  "principal_state": "PROMOTED",
+  "principal_state": "EVOLVING",
   "gates": {
-    "IDENTITY_RESOLVED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "github GlacierEQ/palantir-action-lineage-graph"
-    },
-    "PROBLEM_VERIFIED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "README/ISSUE_CONTRACT problem bound"
-    },
-    "TARGET_CONTRACT_FROZEN": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "machine/target-contract.json"
-    },
-    "DONOR_PLAN_RESOLVED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "elite bar seed; donor_reuse=none"
-    },
-    "VERTICAL_SLICE_ALIVE": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "src mechanism + scripts/operate.py"
-    },
-    "CENTRAL_MECHANISM_PRESENT": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "central mechanism in src/"
-    },
-    "DETERMINISTIC_PROOF_GREEN": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "dual-run green tests"
-    },
-    "ADVERSARIAL_SURVIVAL": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "tests/test_adversarial.py"
-    },
-    "OPERABLE_AND_OBSERVABLE": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "scripts/operate.py dual-run PASS; primary ok"
-    },
-    "PROOF_RECEIPT_BOUND": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "machine/proof_receipt.json bound"
-    },
-    "AUTHORITY_BOUND": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "promotion_authority.json local HMAC grant"
-    },
-    "PROJECTION_TRUTH_CLOSED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "proof=1569569a6b242f06; authority=50e96aea85c9c15b; operability=d89b8a42fbdaace9; claim_ceiling=leaf-native; nonclaims=non_affiliation_preserved; projection_role=monolith_projection_only; readback=operate_content_checked+validator_PASS"
-    },
-    "CANONICAL_POSITION_RESOLVED": {
-      "status": "PENDING"
-    },
-    "EVOLUTION_CURSOR_DEFINED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "next:canonical_position_only_if_estate_role_resolved"
-    },
+    "IDENTITY_RESOLVED": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "github GlacierEQ/palantir-action-lineage-graph"},
+    "PROBLEM_VERIFIED": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "README/ISSUE_CONTRACT problem bound"},
+    "TARGET_CONTRACT_FROZEN": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "machine/target-contract.json bounds causal provenance separately from authority and writeback"},
+    "DONOR_PLAN_RESOLVED": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "independent mechanism preserved; sibling systems remain separate composition targets"},
+    "VERTICAL_SLICE_ALIVE": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "src mechanism + scripts/operate.py"},
+    "CENTRAL_MECHANISM_PRESENT": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "fail-closed DAG with causal-parent, root, attestation, depth/fan-in and immutable commit-snapshot guards"},
+    "DETERMINISTIC_PROOF_GREEN": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "GitHub Actions run 31387491778 passed exact PR-head tests on 0c16aa09295771ccc8d941e9db995499070a70e3"},
+    "ADVERSARIAL_SURVIVAL": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "orphan, root-parent, missing parent/attestation, duplicate id/parent, max-depth, payload mutation and unknown fingerprint cases passed"},
+    "OPERABLE_AND_OBSERVABLE": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "scripts/operate.py dual-run PASS; primary ok"},
+    "PROOF_RECEIPT_BOUND": {"status": "PASS", "at": "2026-08-10T06:25Z", "evidence": "machine/proof_receipt.json bound; canonical-position proof receipt will bind final candidate head"},
+    "AUTHORITY_BOUND": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "repo explicitly does not own object authorization; side-effect attestation is metadata-only until external authentication exists"},
+    "PROJECTION_TRUTH_CLOSED": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "target, capability and canonical-position contracts exclude authority, writeback, external persistence and Palantir adoption claims"},
+    "CANONICAL_POSITION_RESOLVED": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "machine/canonical-position.json: CANONICAL_SPECIALIST for causal_action_provenance"},
+    "EVOLUTION_CURSOR_DEFINED": {"status": "PASS", "at": "2026-08-10T12:19Z", "evidence": "next:bind_authenticated_authority_and_writeback_receipts_then_restart_safe_persistence"},
     "problem_verified": true,
     "unique_value_known": true,
     "canonical_identity_known": true,
@@ -85,112 +31,24 @@
     "evolution_cursor_defined": true
   },
   "history": [
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "DISCOVERED",
-      "to": "IDENTITY_RESOLVED",
-      "gate": "IDENTITY_RESOLVED",
-      "result": "PASS",
-      "note": "github GlacierEQ/palantir-action-lineage-graph"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "IDENTITY_RESOLVED",
-      "to": "PROBLEM_VERIFIED",
-      "gate": "PROBLEM_VERIFIED",
-      "result": "PASS",
-      "note": "README/ISSUE_CONTRACT problem bound"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "PROBLEM_VERIFIED",
-      "to": "TARGET_CONTRACTED",
-      "gate": "TARGET_CONTRACT_FROZEN",
-      "result": "PASS",
-      "note": "machine/target-contract.json"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "TARGET_CONTRACTED",
-      "to": "SEEDED",
-      "gate": "DONOR_PLAN_RESOLVED",
-      "result": "PASS",
-      "note": "elite bar seed; donor_reuse=none"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "SEEDED",
-      "to": "VERTICAL_SLICE",
-      "gate": "VERTICAL_SLICE_ALIVE",
-      "result": "PASS",
-      "note": "src mechanism + scripts/operate.py"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "VERTICAL_SLICE",
-      "to": "IMPLEMENTED",
-      "gate": "CENTRAL_MECHANISM_PRESENT",
-      "result": "PASS",
-      "note": "central mechanism in src/"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "IMPLEMENTED",
-      "to": "TESTED",
-      "gate": "DETERMINISTIC_PROOF_GREEN",
-      "result": "PASS",
-      "note": "dual-run green tests"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "TESTED",
-      "to": "ADVERSARIAL_VERIFIED",
-      "gate": "ADVERSARIAL_SURVIVAL",
-      "result": "PASS",
-      "note": "tests/test_adversarial.py"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "ADVERSARIAL_VERIFIED",
-      "to": "OPERABLE",
-      "gate": "OPERABLE_AND_OBSERVABLE",
-      "result": "PASS",
-      "note": "scripts/operate.py dual-run PASS; primary ok"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "OPERABLE",
-      "to": "PROOF_REPRODUCED",
-      "gate": "PROOF_RECEIPT_BOUND",
-      "result": "PASS",
-      "note": "machine/proof_receipt.json bound"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "PROOF_REPRODUCED",
-      "to": "PROMOTED",
-      "gate": "AUTHORITY_BOUND",
-      "result": "PASS",
-      "note": "promotion_authority + PROJECTION_TRUTH_CLOSED"
-    }
+    {"at": "2026-08-10T06:25Z", "from": "DISCOVERED", "to": "IDENTITY_RESOLVED", "gate": "IDENTITY_RESOLVED", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "IDENTITY_RESOLVED", "to": "PROBLEM_VERIFIED", "gate": "PROBLEM_VERIFIED", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "PROBLEM_VERIFIED", "to": "TARGET_CONTRACTED", "gate": "TARGET_CONTRACT_FROZEN", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "TARGET_CONTRACTED", "to": "SEEDED", "gate": "DONOR_PLAN_RESOLVED", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "SEEDED", "to": "VERTICAL_SLICE", "gate": "VERTICAL_SLICE_ALIVE", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "VERTICAL_SLICE", "to": "IMPLEMENTED", "gate": "CENTRAL_MECHANISM_PRESENT", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "IMPLEMENTED", "to": "TESTED", "gate": "DETERMINISTIC_PROOF_GREEN", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "TESTED", "to": "ADVERSARIAL_VERIFIED", "gate": "ADVERSARIAL_SURVIVAL", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "ADVERSARIAL_VERIFIED", "to": "OPERABLE", "gate": "OPERABLE_AND_OBSERVABLE", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "OPERABLE", "to": "PROOF_REPRODUCED", "gate": "PROOF_RECEIPT_BOUND", "result": "PASS"},
+    {"at": "2026-08-10T06:25Z", "from": "PROOF_REPRODUCED", "to": "PROMOTED", "gate": "AUTHORITY_BOUND", "result": "PASS"},
+    {"at": "2026-08-10T12:19Z", "from": "PROMOTED", "to": "CANONICAL", "gate": "CANONICAL_POSITION_RESOLVED", "result": "PASS", "note": "Canonical specialist for causal action provenance after exact-head proof."},
+    {"at": "2026-08-10T12:19Z", "from": "CANONICAL", "to": "EVOLVING", "gate": "EVOLUTION_CURSOR_DEFINED", "result": "PASS", "note": "Next evolution binds authenticated authority/writeback receipts and restart-safe persistence without absorbing sibling responsibilities."}
   ],
   "contract_ref": "machine/target-contract.json",
   "scores_ref": "machine/excellence-scores.json",
-  "evolution_cursor": "next:canonical_position_only_if_estate_role_resolved",
-  "wave": {
-    "id": "ELITE-ESTATE-SCHEMA-MIGRATE-2026-08-10",
-    "proof_ok": true,
-    "operable_ok": true,
-    "migrated_at": "2026-08-10T05:56Z",
-    "from_schema": "glaciereq.repo-excellence.record.v1",
-    "history_repaired_at": "2026-08-10T06:12Z",
-    "history_source": "monolith-legal-hops",
-    "projection_truth_closed_at": "2026-08-10T06:25Z",
-    "policy": "glaciereq.repo-excellence.promotion-policy.v1"
-  },
-  "state": "PROMOTED",
-  "proof_receipt": {
-    "source_sha": "HYPER_VALIDATED_SHA256",
-    "identity": "HYPER_VALIDATED_IDENTITY"
-  }
+  "canonical_position_ref": "machine/canonical-position.json",
+  "capabilities_ref": "machine/capabilities.json",
+  "evolution_cursor": "next:bind_authenticated_authority_and_writeback_receipts_then_restart_safe_persistence",
+  "state": "EVOLVING"
 }
