@@ -1,10 +1,7 @@
-
 """Action lineage graph — fail-closed DAG for operational actions.
 
 Leveled (L1): depth limit, reachability, side-effect attestation binding,
 max parents, topological export.
-
-Independent reference only.
 """
 from __future__ import annotations
 
