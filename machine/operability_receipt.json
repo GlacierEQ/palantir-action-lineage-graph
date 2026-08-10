@@ -1,0 +1,29 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/palantir-action-lineage-graph",
+  "at": "2026-08-10T04:12Z",
+  "source_sha": "fc75714d16b60cae38c39d1c98957b5886b8212ddd985556ebc88a32d7721208",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "module": "lineage",
+    "ok": true,
+    "repository": "GlacierEQ/palantir-action-lineage-graph",
+    "smoke": {
+      "args": [
+        "ActionNode(action_id='sample_action_id',"
+      ],
+      "content_checked": true,
+      "invoked": true,
+      "kind": "class",
+      "method": "commit",
+      "module_local": true,
+      "name": "LineageGraph",
+      "result": [
+        "REFUSED",
+        "TOO_MANY_PARENTS"
+      ]
+    }
+  },
+  "dual_run_ok": true,
+  "result": "PASS"
+}

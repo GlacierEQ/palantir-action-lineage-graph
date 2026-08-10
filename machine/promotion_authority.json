@@ -1,0 +1,11 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/palantir-action-lineage-graph",
+  "source_sha": "fc75714d16b60cae38c39d1c98957b5886b8212ddd985556ebc88a32d7721208",
+  "proof_receipt_digest": "1569569a6b242f064e9aaf97b9fc3dee187c7615a0b1af903eb14e3df63ae18a",
+  "not_after": 1788927149.234226,
+  "mac": "6c1e0418ae45d4ebc9e968f24ef27330375e409e7b18260bc42c87ceac35eff4",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true,
+  "secret_ref": "src/promotion_authority.py::LOCAL_OPERATOR_SECRET"
+}
