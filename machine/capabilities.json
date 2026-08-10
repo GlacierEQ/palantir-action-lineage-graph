@@ -1,1 +1,14 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/palantir-action-lineage-graph",
+  "capabilities": [
+    "causal_parent_guard",
+    "side_effect_attestation_requirement",
+    "content_bound_lineage_fingerprint",
+    "immutable_commit_snapshot",
+    "bounded_dag_depth_and_fan_in",
+    "deterministic_topological_export"
+  ],
+  "truth_boundary": "In-memory causal provenance mechanism only. It does not authenticate attestations, decide actor/object authority, execute side effects, or persist to an external system.",
+  "family": "causal_action_provenance"
+}
